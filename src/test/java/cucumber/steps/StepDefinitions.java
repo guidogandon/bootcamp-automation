@@ -1,27 +1,30 @@
 package cucumber.steps;
 
+
 import io.cucumber.java.en.*;
+import org.assertj.core.api.Assertions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class StepDefinitions {
     Integer total;
 
-    @Given("an example scenario")
-    public void an_example_scenario() {
-        total = 0;
-        System.out.println("Hola");
+    @Given("the user has {int} liters of water")
+    public void given_water(int liters) {
+        total = liters;
     }
 
-    @When("all step definitions are implemented")
-    public void all_step_definitions_are_implemented() {
-        System.out.println("Hola");
-        total = total + 1;
+    @When("the user drinks {int} liters")
+    public void user_drinks_water(int waterDrank) {
+        total = total - waterDrank;
     }
 
-    @Then("the scenario passes")
-    public void the_scenario_passes() {
+    @Then("the user should have {int} liters left")
+    public void should_have_liters(int litersLeft) {
         System.out.println(total);
+        assertThat(total).isEqualTo(litersLeft);
     }
-
 }
