@@ -2,15 +2,12 @@ package cucumber.steps;
 
 
 import io.cucumber.java.en.*;
-import org.assertj.core.api.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class StepDefinitions {
     Integer total;
+
 
     @Given("the user has {int} liters of water")
     public void given_water(int liters) {
