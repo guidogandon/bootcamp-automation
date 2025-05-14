@@ -1,6 +1,6 @@
 Feature: Water
 
-  Scenario: Drink some water
+  Scenario: Drink some water - happy path
     Given the user has 2 liters of water
     When the user drinks 1 liters
     Then the user should have 1 liters left
@@ -8,4 +8,4 @@ Feature: Water
   Scenario: Drink some more water
     Given the user has 2 liters of water
     When the user drinks 2 liters
-    Then the user should have 1 liters left
+    Then the user should have 0 liters left
